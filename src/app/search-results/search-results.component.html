@@ -1,0 +1,18 @@
+Filter word: {{filterWord}}
+<app-game-search-bar [(initialWord)]='filterWord'
+  (changedQuery)='onChangedQuery($event)'></app-game-search-bar>
+<div class='game-list'>
+  <div *ngIf='games && games.length'>
+    <ul>
+      <li *ngFor='let game of games | gameFilter:filterWord'>
+        <a (click)='onGameClicked(game.id)'>
+          {{game.name}}
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <div *ngIf='!games'>
+    Loading game list...
+  </div>
+</div>

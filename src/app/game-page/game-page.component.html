@@ -1,0 +1,16 @@
+Game: {{gameName}}
+<div class='category-list'>
+  <div *ngIf='categories && categories.length'>
+    <ul>
+      <li *ngFor='let category of categories'>
+        <a (click)='onCategoryClicked(category.id)'>
+          {{category.name}}
+        </a>
+      </li>
+    </ul>
+
+  </div>
+  <div *ngIf='!categories'>
+    Loading category list...
+  </div>
+</div>
