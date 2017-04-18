@@ -5,5 +5,5 @@ export interface IRun {
   time:number;
   playerId:string;
   playerName:string;
-  wr:boolean;
+  subcategories:string[];
 }
